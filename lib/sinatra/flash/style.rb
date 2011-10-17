@@ -22,7 +22,7 @@ module Sinatra
       def styled_flash(key=:flash)
         return "" if flash(key).empty?
         id = (key == :flash ? "flash" : "flash_#{key}")
-        close = "<a class='close' href='#'>×</a>"
+        close = '<a class="close" href="#">×</a>'
         messages = flash(key).collect {|message| "  <div class='alert-message flash #{message[0]}'>#{close} \n #{message[1]}</div>\n"} 
         "<div id='#{id}'>\n" + messages.join + "</div>"
       end
